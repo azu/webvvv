@@ -18,6 +18,18 @@
             location.href = "https://example.com";
         }, 500);
     });
+
+    const windowOpenButton = document.getElementById('window-open-button');
+    windowOpenButton.addEventListener('click', () => {
+        console.log('window open button clicked');
+        window.open('https://example.com', '_blank');
+    });
+    const windowOpenRefButton = document.getElementById('window-open-ref-button');
+    windowOpenRefButton.addEventListener('click', (event) => {
+        const windowRef = window.open();
+        event.preventDefault();
+        windowRef.location = 'https://example.com';
+    });
 </script>
 <div style="padding: 1em 2em; gap: 1em">
     <div>
@@ -35,6 +47,8 @@
 </div>
 <div style="padding: 1em 2em; gap: 1em">
     <button id="timeout-button">timeout button</button>
+    <button id="window-open-button">window open button</button>
+    <button id="window-open-ref-button">window open ref button</button>
 </div>
 <div>
     <a href="https://youheinakagawa.github.io/go-to-safari-js/">go-to-safari</a>
