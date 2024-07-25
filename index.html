@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="module">
+    const timeoutButton = document.getElementById('timeout-button');
+    timeoutButton.addEventListener('click', () => {
+        setTimeout(() => {
+            console.log('timeout button clicked');
+            location.href = "https://example.com";
+        }, 500);
+    });
+</script>
+
+
+<button id="timeout-button">timeout button</button>
+</body>
+</html>
