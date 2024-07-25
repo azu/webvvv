@@ -30,6 +30,14 @@
         event.preventDefault();
         windowRef.location = 'https://example.com';
     });
+    const windowOpenRefLazyButton = document.getElementById('window-open-ref-lazy-button');
+    windowOpenRefLazyButton.addEventListener('click', (event) => {
+        const windowRef = window.open();
+        event.preventDefault();
+        setTimeout(() => {
+            windowRef.location = 'https://example.com';
+        }, 500);
+    });
 </script>
 <div style="padding: 1em 2em; gap: 1em">
     <div>
@@ -51,6 +59,7 @@
     <button id="timeout-button">timeout button</button>
     <button id="window-open-button">window open button</button>
     <button id="window-open-ref-button">window open ref button</button>
+    <button id="window-open-ref-lazy-button">window open ref lazy button</button>
 </div>
 <div>
     <a href="https://youheinakagawa.github.io/go-to-safari-js/">go-to-safari</a>
